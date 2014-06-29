@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# place me in /usr/local/bin/
+# place me in /usr/local/bin/ and make sure to chmod +x
 # infinite loop, pinging an HTTP server
 # in a real application, you'd probably use cURL to POST something interesting to the remote server
 
