@@ -12,6 +12,13 @@ Upstart is available on other Linuxes, and this demo should generally work on th
 
 For reference, Upstart is replacing the venerable, older SysV init scripts system; if Upstart is available on your system, I recommend it over the SysV stuff.
 
+As written, the Upstart config tells the daemon to start when the networking subsystem is up, and to stop when the network subsystem is going down.  (We need the networking to be up to ping the remote server, after all.)  Daemons traditionally start and stop on runlevels; for this daemon, keying off the networking state is more useful than runlevels.  Upstart's flexibility about events generally means more daemons will key off events important to them, rather than the coarse-grained runlevels.  But, don't feel like runlevels are verboten, either.
+
+To start/stop the daemon by hand (for testing, or whatever):
+
+* sudo start ticker
+* sudo stop ticker
+
 Various links for reference:
 
 * http://upstart.ubuntu.com/cookbook/
